@@ -1,0 +1,391 @@
+/* ============================================================
+   Job Scheduling with Deadlines — Stylesheet
+   Clean, minimal design with monospace accents
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;700&display=swap');
+
+/* ── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: #f5f4f0;
+  color: #1a1a1a;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.site-header {
+  background: #1a1a1a;
+  color: #f5f4f0;
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.header-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  background: rgba(255,255,255,0.12);
+  color: #a8e6cf;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.site-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.site-header h1 span {
+  color: #a8e6cf;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(245, 244, 240, 0.65);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Layout ────────────────────────────────────────────────── */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e0dfd9;
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Inputs ────────────────────────────────────────────────── */
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.input-field,
+td input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d4d3cd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  background: #fafaf8;
+  color: #1a1a1a;
+  width: 110px;
+  transition: border-color 0.15s;
+}
+
+.input-field:focus,
+td input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+}
+
+td input {
+  width: 90px;
+  height: 34px;
+  font-size: 13px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid #d4d3cd;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+  background: #f5f4f0;
+  border-color: #1a1a1a;
+}
+
+.btn-accent {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+.btn-accent:hover {
+  background: #333;
+}
+
+.btn-secondary {
+  background: #f5f4f0;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #888;
+  border-color: #d4d3cd;
+  margin-top: 1rem;
+}
+
+.btn-outline:hover {
+  color: #1a1a1a;
+  border-color: #1a1a1a;
+  background: #f5f4f0;
+}
+
+/* ── Error messages ────────────────────────────────────────── */
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Tables ────────────────────────────────────────────────── */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #888;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0dfd9;
+}
+
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eeede8;
+  vertical-align: middle;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.status-ok  { color: #27ae60; font-weight: 600; }
+.status-no  { color: #aaa; }
+
+/* ── Tabs ──────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.tab {
+  height: 32px;
+  padding: 0 14px;
+  border: 1px solid #d4d3cd;
+  border-radius: 20px;
+  background: transparent;
+  color: #888;
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab:hover { border-color: #1a1a1a; color: #1a1a1a; }
+
+.tab.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+/* ── Result grid ───────────────────────────────────────────── */
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.result-box {
+  background: #fafaf8;
+  border: 1px solid #e0dfd9;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.result-box-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* ── Job chips ─────────────────────────────────────────────── */
+.job-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #d4d3cd;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 52px;
+}
+
+.chip-sub {
+  font-size: 10px;
+  font-weight: 400;
+  color: #27ae60;
+  margin-top: 2px;
+}
+
+/* ── Slot timeline ─────────────────────────────────────────── */
+.slot-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48px;
+  background: #fff;
+  border: 1px solid #e0dfd9;
+  border-radius: 8px;
+  padding: 6px 4px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #ccc;
+}
+
+.slot.filled {
+  background: #eafaf2;
+  border-color: #a8e6cf;
+  color: #1a6b40;
+  font-weight: 600;
+}
+
+.slot-num {
+  font-size: 10px;
+  color: #ccc;
+  margin-top: 2px;
+}
+
+.slot.filled .slot-num {
+  color: #7dc9a0;
+}
+
+/* ── Profit banner ─────────────────────────────────────────── */
+.profit-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.profit-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+
+.profit-value {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  color: #a8e6cf;
+}
+
+/* ── Algorithm trace ───────────────────────────────────────── */
+.trace-box {
+  background: #fafaf8;
+  border: 1px solid #e0dfd9;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.trace-item { color: #555; }
+.trace-item.placed { color: #27ae60; }
+.trace-item.skipped { color: #ccc; }
+
+/* ── Utility ────────────────────────────────────────────────── */
+.hidden { display: none; }
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #aaa;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 540px) {
+  .site-header h1 { font-size: 1.8rem; }
+  .result-grid { grid-template-columns: 1fr; }
+  .profit-value { font-size: 1.6rem; }
+}

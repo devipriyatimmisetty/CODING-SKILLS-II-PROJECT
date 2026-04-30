@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Scheduling with Deadlines</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-badge">Greedy Algorithm</div>
+    <h1>Job Scheduling <span>with Deadlines</span></h1>
+    <p class="subtitle">Maximize profit by scheduling jobs optimally within their deadlines.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== STEP 1: Number of Jobs ===== -->
+    <section class="card" id="step-count">
+      <div class="card-label">Step 01 — Setup</div>
+      <h2>How many jobs?</h2>
+      <div class="input-row">
+        <input type="number" id="numJobs" min="1" max="12" placeholder="e.g. 4" value="4" class="input-field" />
+        <button class="btn" onclick="generateJobInputs()">Generate Fields →</button>
+        <button class="btn btn-secondary" onclick="loadDemo()">Load Demo</button>
+      </div>
+      <div class="error hidden" id="err-count"></div>
+    </section>
+
+    <!-- ===== STEP 2: Job Details ===== -->
+    <section class="card hidden" id="step-jobs">
+      <div class="card-label">Step 02 — Job Data</div>
+      <h2>Enter Job Details</h2>
+      <div class="table-wrapper">
+        <table id="jobTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Job ID</th>
+              <th>Deadline</th>
+              <th>Profit</th>
+            </tr>
+          </thead>
+          <tbody id="jobTableBody">
+            <!-- Rows injected by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-accent" onclick="calculateSchedule()">⚡ Calculate Schedule</button>
+      <div class="error hidden" id="err-jobs"></div>
+    </section>
+
+    <!-- ===== STEP 3: Results ===== -->
+    <section class="card hidden" id="step-result">
+      <div class="card-label">Step 03 — Result</div>
+      <h2>Optimal Schedule</h2>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('schedule', this)">Schedule</button>
+        <button class="tab" onclick="showTab('trace', this)">Algorithm Trace</button>
+      </div>
+
+      <!-- Schedule Tab -->
+      <div id="tab-schedule">
+        <div class="result-grid">
+          <div class="result-box">
+            <div class="result-box-label">Selected Jobs</div>
+            <div id="selectedJobs" class="job-chips"></div>
+          </div>
+          <div class="result-box">
+            <div class="result-box-label">Time Slots</div>
+            <div id="slotTimeline" class="slot-timeline"></div>
+          </div>
+        </div>
+        <div class="profit-banner">
+          <span class="profit-label">Maximum Profit</span>
+          <span class="profit-value" id="totalProfit">0</span>
+        </div>
+        <div class="table-wrapper" id="detailTableWrapper"></div>
+      </div>
+
+      <!-- Trace Tab -->
+      <div id="tab-trace" class="hidden">
+        <div class="trace-box" id="traceBox"></div>
+      </div>
+
+      <button class="btn btn-outline" onclick="resetAll()">↺ Start Over</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Job Scheduling with Deadlines · Greedy Algorithm · O(n²) · JavaScript simulation of C++ logic</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
